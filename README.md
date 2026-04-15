@@ -19,4 +19,4 @@ Download di sini:
 - apk/app-debug.apk
 
 ## Author
-Kaga-nim
+Nama: Kaga-nim

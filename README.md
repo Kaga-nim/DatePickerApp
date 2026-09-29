@@ -7,7 +7,7 @@ Aplikasi Android sederhana berbasis **Kotlin** untuk mencatat agenda atau kegiat
 ## 🛠️ Fitur Utama
 
 - 📝 **Input Nama Kegiatan**: Memasukkan deskripsi atau nama rencana kegiatan.
-- 📅 **Pemilih Tanggal Interactive (`DatePickerDialog`)**: Memilih tanggal kegiatan secara akurat menggunakan dialog kalender native Android.
+- 📅 **Pemilih Tanggal Interactive (`DatePickerDialog`)**: Memilih tanggal kegiatan secara interaktif menggunakan dialog kalender native Android.
 - 💾 **Penyimpanan Data Lokal (`SharedPreferences` & JSON)**: Menyimpan daftar kegiatan dalam format `JSONArray` ke `SharedPreferences`, sehingga data tetap tersimpan meskipun aplikasi ditutup/direstart.
 - 📋 **Daftar Kegiatan (`ListView`)**: Menampilkan seluruh riwayat kegiatan dan tanggalnya secara rapi dalam daftar.
 - 🗑️ **Hapus Item Kegiatan**: Menghapus kegiatan tertentu secara instan cukup dengan menekan (*click*) item kegiatan pada daftar.
@@ -23,7 +23,7 @@ Aplikasi Android sederhana berbasis **Kotlin** untuk mencatat agenda atau kegiat
 - **Package Name**: `id.kaganim.datepickerapp`
 - **Min SDK**: API 24 (Android 7.0 Nougat)
 - **Target SDK**: API 36
-- **Build System**: Gradle with Kotlin DSL (`.gradle.kts`)
+- **Build System**: Gradle dengan Kotlin DSL (`build.gradle.kts`) & Version Catalog (`gradle/libs.versions.toml`)
 
 ---
 
@@ -31,25 +31,44 @@ Aplikasi Android sederhana berbasis **Kotlin** untuk mencatat agenda atau kegiat
 
 ```text
 p8/
-├── apk/
-│   └── app-debug.apk             # File APK siap pakai
-├── datepickerapp/                # Modul utama aplikasi
-│   └── app/
-│       └── src/main/
-│           ├── java/id/kaganim/datepickerapp/
-│           │   └── MainActivity.kt       # Logika utama (DatePicker, SharedPreferences, ListView)
-│           └── res/layout/
-│               ├── activity_main.xml     # Layout utama aplikasi
-│               └── item_kegiatan.xml     # Layout item kegiatan
+├── app/                          # Modul utama aplikasi
+│   ├── build/                    # Hasil kompilasi & file APK
+│   │   └── outputs/apk/debug/
+│   │       └── app-debug.apk     # File APK Debug
+│   ├── build.gradle.kts          # Konfigurasi build modul app
+│   └── src/
+│       ├── main/
+│       │   ├── AndroidManifest.xml
+│       │   ├── java/id/kaganim/datepickerapp/
+│       │   │   └── MainActivity.kt       # Logika utama (DatePicker, SharedPreferences, ListView)
+│       │   └── res/
+│       │       └── layout/
+│       │           ├── activity_main.xml # Layout utama aplikasi
+│       │           └── item_kegiatan.xml # Layout item kegiatan
+│       ├── androidTest/
+│       └── test/
+├── gradle/
+│   └── libs.versions.toml        # Gradle Version Catalog
+├── build.gradle.kts              # Root build script
+├── settings.gradle.kts           # Konfigurasi project & include(:app)
 └── README.md
 ```
 
 ---
 
-## 📲 Download & Instalasi APK
+## 📲 Download & Lokasi APK
 
-Anda dapat menginstal aplikasi langsung tanpa perlu *compile* proyek melalui file APK yang tersedia:
-- 📥 **[Download APK Debug](apk/app-debug.apk)** (`apk/app-debug.apk`)
+Hasil kompilasi APK Debug dapat ditemukan atau diunduh langsung melalui tautan berikut:
+- 📥 **[Download APK Debug](app/build/outputs/apk/debug/app-debug.apk)** (`app/build/outputs/apk/debug/app-debug.apk`)
+
+---
+
+## 💻 Cara Menjalankan Proyek
+
+1. Buka folder proyek `p8` di **Android Studio**.
+2. Lakukan sync Gradle (`Sync Project with Gradle Files`).
+3. Hubungkan perangkat Android atau jalankan Emulator.
+4. Klik tombol **Run 'app'** (`Shift + F10`).
 
 ---
 

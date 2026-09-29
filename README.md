@@ -59,13 +59,13 @@ p8/
 ## 📲 Download & Lokasi APK
 
 Hasil kompilasi APK Debug dapat ditemukan atau diunduh langsung melalui tautan berikut:
-- 📥 **[Download APK Debug](app/build/outputs/apk/debug/app-debug.apk)** (`app/build/outputs/apk/debug/app-debug.apk`)
+- 📥 **[Download APK](app/build/outputs/apk/debug/app-debug.apk)** (`app/build/outputs/apk/debug/app-debug.apk`)
 
 ---
 
 ## 💻 Cara Menjalankan Proyek
 
-1. Buka folder proyek `p8` di **Android Studio**.
+1. Buka folder proyek `DatePickerApp` di **Android Studio**.
 2. Lakukan sync Gradle (`Sync Project with Gradle Files`).
 3. Hubungkan perangkat Android atau jalankan Emulator.
 4. Klik tombol **Run 'app'** (`Shift + F10`).
